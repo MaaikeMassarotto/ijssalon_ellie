@@ -13,36 +13,41 @@ btw = 0.09
 
 def inkomsten_totaal(inkomsten, btw):
     totaal = 0
-    for nr in inkomsten:
-        totaal += nr
-    bedrag = totaal * btw
-    uitvoer = f"Het totaal van alle inkomsten van deze week is {totaal} euro, waarover {bedrag} euro btw betaald dient te worden"
+    for bedrag in inkomsten:
+        totaal += bedrag
+    btw_bedrag = totaal * btw
+    uitvoer = f"Het totaal van alle inkomsten van deze week is {totaal} euro, waarover {btw_bedrag} euro btw betaald dient te worden"
     return uitvoer
 # Voorbeeld:
 print(inkomsten_totaal(inkomsten_per_dag, btw))
 
 
 def laag_en_hoog(mijn_lijst):
-    hoogste = max(mijn_lijst)
+    uitvoer = []
     laagste = min(mijn_lijst)    
-    uitvoer = hoogste, laagste
+    hoogste = max(mijn_lijst)
+    uitvoer.append(laagste)
+    uitvoer.append(hoogste)
     return uitvoer
 # Voorbeeld:
 print(laag_en_hoog(inkomsten_per_dag))
 
 
 def gemiddelde(mijn_lijst):
-    totaal = sum(mijn_lijst)
+    totaal = 0
     aantal = len(mijn_lijst)  
+    for element in mijn_lijst:
+        totaal += element
     gemiddelde = totaal / aantal
-    uitvoer = f"De gemiddelde inkomsten deze week zijn {gemiddelde:.2f} euro."
-    return uitvoer
+    return f"De gemiddelde inkomsten deze week zijn {gemiddelde:.2f} euro."
 # Voorbeeld:
 print(gemiddelde(inkomsten_per_dag))
 
 
 def meervoudig(invoer_lijst):
-    return laag_en_hoog(invoer_lijst)
+    tijdelijk = laag_en_hoog(invoer_lijst)
+    uitvoer = [tijdelijk[0], tijdelijk[1]]
+    return uitvoer
 # Voorbeeld:
 print(meervoudig(invoer_lijst=[10, 5, 3, 2, 1, 2, 9]))
 
