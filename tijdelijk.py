@@ -25,3 +25,22 @@ def print_aanbieding():
 
 decoreer("Aanbieding")
 print_aanbieding()
+
+'''
+Uitvoer:
+**************
+* Aanbieding *
+**************
+
+VANDAAG
+in
+de
+AANBIEDING:
+VANILLE-IJS,
+1
+LITER
+-
+SLECHTS
+€
+2.40
+'''
